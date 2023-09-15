@@ -1,38 +1,383 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
-  flex-direction: column;
+  margin: 0 auto;
+  max-width: 1200px; /* Adjust the max-width as needed */
+  padding: 20px; /* Adjust the padding as needed */
+}
+
+
+/* Reset some default styles */
+body, h1, h2, p, ul, li, img, input, button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+}
+
+/* Basic styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.container {
+  min-width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 0 40px;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-right: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.nav-link {
+  list-style: none;
+  display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.nav-link li {
+  margin-right: 36px;
+  font-size: 20px;
+  margin-top: 6px;
+}
+
+.nav-link a {
+  text-decoration: none;
+  color: #CCCC;
+}
+
+li.google-mail {
+  background: #086fe5;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  text-align: center;
+  margin: 0px 20px;
+}
+
+li.google-mail a{
+  position: relative;
+  top: 2px;
+}
+
+li.pro a {
+  margin-left: 15px;
+  color: #f50 !important;
+}
+
+.nav-buttons button {
+  margin-right: 10px;
+  padding: 6px 12px;
+  border: none;
+  background-color: #f50;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar input[type="text"] {
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #e5e5e5;
+  width: 300px;
+}
+
+.search-bar button {
+  padding: 6px 12px;
+  border: none;
+  background-color: #f50;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  margin: 0px 15px;
+}
+
+.dot  {
+  background: #ccc;
+  height: 11px;
+  width: 11px;
+  border-radius: 50%;
+  margin-right: 2px;
+}
+
+.search {
+  position: relative;
+  left: -30px;
+  top: 2px;
+  color: #696262;
+  font-size: 23px;
+}
+
+.bell {
+  font-size: 23px;
+  background: none;
+  color: #ccc;
+  margin: 0px 15px;
+  display: flex;
+  align-items: center;
+}
+
+.message {
+  font-size: 23px;
+  background: none;
+  color: #ccc;
+  margin: 0px 15px;
+  display: flex;
+  align-items: center;
+}
+
+.name {
+  color: whitesmoke;
+  position: relative;
+  top: 2px;
+}
+
+/* Responsive design using media queries */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .nav-links {
+    margin-top: 10px;
+    flex-direction: column; /* Change the direction of the navigation links */
   }
+
+  .nav-links li {
+    margin-right: 0; /* Remove right margin for navigation links */
+    margin-bottom: 10px; /* Add bottom margin to separate navigation links */
+  }
+
+  .nav-buttons {
+    margin-top: 10px;
+  }
+
+  .search-bar {
+    margin-top: 10px;
+    flex-direction: column; /* Change the direction of the search bar elements */
+    align-items: center; /* Center align search bar elements */
+  }
+
+  .search-bar input[type="text"] {
+    width: 100%; /* Make the search input full width */
+  }
+}
+
+
+
+/* Carousel */
+
+
+.sidebar {
+  width: 290px; /* Adjust the width as needed */
+  background-color: #efefef;
+  color: #fff;
+  padding: 20px;
+  position: fixed;
+  right: 100px;
+  height: 100vh;
+  top: 56px;
+  border-left: 1px solid lightgray;
+}
+
+.main-content {
+  flex-grow: 0;
+  background-color: #efefef;
+  padding: 20px;
+  height: 200vh;
+  width: 85%;
+  position: relative;
+  bottom: 20px;
+}
+
+
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Poppins', sans-serif;
+}
+
+
+h4.featured{
+  font-size: 35px;
+  padding: 9px 0px 0px 11px;
+  font-weight: 400;
+}
+
+.wrapper{
+display: flex;
+max-width: 1200px;
+position: relative;
+}
+.wrapper i{
+top: 50%;
+height: 44px;
+width: 44px;
+color: #343F4F;
+cursor: pointer;
+font-size: 1.15rem;
+position: absolute;
+text-align: center;
+line-height: 44px;
+background: #fff;
+border-radius: 50%;
+transform: translateY(-50%);
+transition: transform 0.1s linear;
+}
+.wrapper i:active{
+transform: translateY(-50%) scale(0.9);
+}
+.wrapper i:hover{
+background: #f2f2f2;
+}
+.wrapper i:first-child{
+left: -22px;
+display: none;
+}
+.wrapper i:last-child{
+position: relative;
+top: 9px;
+}
+.wrapper .carousel{
+font-size: 0px;
+cursor: pointer;
+overflow: hidden;
+white-space: nowrap;
+scroll-behavior: smooth;
+}
+
+
+.wrapper{
+  display: flex;
+  max-width: 900px;
+  position: relative;
+  margin-top: 15px;
+}
+.wrapper i{
+  top: 50%;
+  height: 44px;
+  width: 44px;
+  color: #343F4F;
+  cursor: pointer;
+  font-size: 1.15rem;
+  position: absolute;
+  text-align: center;
+  line-height: 44px;
+  background: #fff;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+}
+.wrapper i:active{
+  transform: translateY(-50%) scale(0.9);
+}
+.wrapper i:hover{
+  background: #f2f2f2;
+}
+.wrapper i:first-child{
+  left: -22px;
+  display: inline-block;
+}
+.wrapper i:last-child {
+  position: absolute;
+  top: 116px;
+  float: right;
+  right: -4px;
+}
+.wrapper .carousel{
+  font-size: 0px;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+}
+
+.carousel {
+  display: flex;
+  
+}
+
+.tracks{
+  display: contents;
+}
+
+.carousel img{
+height: 216px;
+object-fit: cover;
+user-select: none;
+margin-left: 14px;
+width: calc(600px / 3);
+border: 1px solid lightgrey;
+}
+.carousel img:first-child{
+margin-left: 0px;
+}
+
+@media screen and (max-width: 900px) {
+.carousel img{
+  width: calc(100% / 2);
+}
+}
+
+@media screen and (max-width: 550px) {
+.carousel img{
+  width: 100%;
+}
 }
